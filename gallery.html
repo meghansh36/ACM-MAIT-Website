@@ -17,6 +17,8 @@
    
   </head>
   <body>
+      
+     <!-- <img src="img/bg_gallery.jpg" alt="bg" id="mybg" /> -->
    
    <!-- NAV BAR -->
     <nav class="navbar navbar-expand-lg nb-nav-bg fixed-top">
@@ -45,7 +47,7 @@
             <a class="nav-link nb-link-style-text" href="team.html">TEAM</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nb-link-style-text" href="#">ABOUT US</a>
+            <a class="nav-link nb-link-style-text" href="about.html">ABOUT US</a>
           </li>
           <li class="nav-item">
             <a class="nav-link nb-link-style-text" href="#" data-toggle="modal" data-target="#contactModal">CONTACT</a>
@@ -67,7 +69,16 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                         
+                         <form method="post" action="contact.php" target="iframe">
+                           <div class="form-group">
+                           <input type="text" name="name" placeholder="Name*" required="" class="form-control"></div>
+                           <div class="form-group">
+                           <input type="email" name="email" placeholder="Email*" required="" class="form-control"></div>
+                           <div class="form-group">
+                           <textarea name="message" placeholder="Message*" required="" class="form-control" rows="4"></textarea></div>
+                           <input type="submit" name="submit" value="Submit" class="button3">
+                         </form>
+                         <iframe name="iframe" style="border:0 solid white;height: 5px;"></iframe>   
                     </div>
                 </div>
             </div>
@@ -87,25 +98,26 @@
         <h1>GALLERY</h1>
     
         <div class="swiper-container">
-            <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image:url(img/1.jpg)"></div>
-            <div class="swiper-slide" style="background-image:url(img/2.jpg)"></div>
-            <div class="swiper-slide" style="background-image:url(img/3.jpg)"></div>
-            <div class="swiper-slide" style="background-image:url(img/4.jpg)"></div>
-            <div class="swiper-slide" style="background-image:url(img/5.jpg)"></div>
-            <div class="swiper-slide" style="background-image:url(img/6.jpg)"></div>
-            <div class="swiper-slide" style="background-image:url(img/7.jpg)"></div>
-            <div class="swiper-slide" style="background-image:url(img/8.jpg)"></div>
-            <div class="swiper-slide" style="background-image:url(img/9.jpg)"></div>
-            <div class="swiper-slide" style="background-image:url(img/10.jpg)"></div>
-        </div>
-        <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide img-fluid" style="background-image:url(img/1.jpg)"></div>
+            <div class="swiper-slide img-fluid" style="background-image:url(img/2.jpg)"></div>
+            <div class="swiper-slide img-fluid" style="background-image:url(img/3.jpg)"></div>
+            <div class="swiper-slide img-fluid" style="background-image:url(img/4.jpg"></div>
+            <div class="swiper-slide img-fluid" style="background-image:url(img/5.jpg)"></div>
+            <div class="swiper-slide img-fluid" style="background-image:url(img/6.jpg)"></div>
+            <div class="swiper-slide img-fluid" style="background-image:url(img/7.jpg)"></div>
+            <div class="swiper-slide img-fluid" style="background-image:url(img/8.jpg)"></div>
+            <div class="swiper-slide img-fluid" style="background-image:url(img/9.jpg)"></div>
+            <div class="swiper-slide img-fluid" style="background-image:url(img/10.jpg)"></div>
+        </div> 
+        <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+    </div>
+            
         </div>
-    </div>
-    </div>
+       </div>
     <!-- End Image Carousel -->
     
 
@@ -127,27 +139,48 @@
       $(function() {
           $('.wider').hide();
       });
-     var swiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            effect: 'coverflow',
-            grabCursor: true,
-            loop: true,
-            centeredSlides: true,
-            keyboardControl: true,
-            lazyloading: true,
-            mousewheelControl: true,
-            lazyLoadingInPrevNext: true,
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            slidesPerView: '3',
-            coverflow: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows : true
-            }
-        });
+//     var swiper = new Swiper('.swiper-container', {
+//            pagination: '.swiper-pagination',
+//            effect: 'coverflow',
+//            grabCursor: true,
+//            loop: true,
+//            centeredSlides: true,
+//            keyboardControl: true,
+//            lazyloading: true,
+//            mousewheelControl: false,
+//            lazyLoadingInPrevNext: true,
+//            nextButton: '.swiper-button-next',
+//            prevButton: '.swiper-button-prev',
+//            slidesPerView: 4,
+//            coverflow: {
+//                rotate: 50,
+//                stretch: 0,
+//                depth: 100,
+//                modifier: 1,
+//                slideShadows : true
+//            }
+//        });
+      
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        effect: 'coverflow',
+        grabCursor: true,
+        loop:true,
+        keyboardControl: true,
+        lazyloading: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        coverflow: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows : true
+        }
+    });
+   
 
     </script>
     <script type="text/javascript" src="javascript/gallery.js"></script>
